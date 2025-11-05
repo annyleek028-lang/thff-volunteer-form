@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Toronto Horror Film Fest 2026 — Volunteer Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#120707; --bg2:#0a0a0a; --line:#221010;
+      --panel: rgba(20,20,20,.86);
+      --border: rgba(127,29,29,.3);
+      --text:#ffe4e6; --muted:#ffd3d8; --accent:#dc2626; --accent-dark:#b91c1c;
+      --field:#1f1f1f; --field-border:#373737; --placeholder:rgba(255,228,230,.38);
+      --ok-bg: rgba(20,83,45,.25); --ok-bd:#14532d; --ok-t:#bbf7d0;
+    }
+    html, body { height:100%; margin:0; background: radial-gradient(ellipse at top, var(--bg1), var(--bg2) 60%); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .wrap{ max-width: 960px; margin: 0 auto; padding: clamp(20px, 4vw, 36px) clamp(12px, 3.5vw, 22px); }
+    .accent{ height:6px; background: linear-gradient(90deg, rgba(153,27,27,0.75), rgba(76,5,5,0.85), rgba(153,27,27,0.75)); border-bottom:1px solid var(--line); border-radius: 6px; }
+    h1{ font-weight:800; letter-spacing:-0.02em; text-shadow:0 2px 0 rgba(0,0,0,.6); margin: 14px 0 4px; font-size: clamp(22px, 4.8vw, 34px); }
+    .subtitle{ opacity:.9; margin: 0 0 16px; font-size: clamp(14px, 3.6vw, 16px); }
+    .card{ background: var(--panel); backdrop-filter: blur(6px); border:1px solid var(--border); border-radius: 18px; padding: clamp(14px, 3.5vw, 20px); box-shadow: 0 10px 30px rgba(69,10,10,.35); }
+    .grid{ display:grid; gap: 14px; }
+    .g2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .g3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 840px){ .g2, .g3 { grid-template-columns: 1fr; } }
+    h2{ font-size: clamp(16px, 3.8vw, 18px); margin: 0 0 10px; display:flex; align-items:center; gap:8px; }
+    h2::before{ content: ""; display: inline-block; width: 6px; height: 24px; background: var(--accent); border-radius: 8px; }
+    label{ font-size: 14px; opacity: .95; display: block; margin-bottom: 6px; }
+    input, select, textarea{ width: 100%; box-sizing: border-box; border-radius: 12px; border: 1px solid var(--field-border); background: var(--field); color: var(--text); padding: 12px 14px; font-size: 16px; }
+    input[type="file"]{ padding: 10px; background:#1f1f1f; }
+    input::placeholder, textarea::placeholder{ color: var(--placeholder); }
+    input:focus, select:focus, textarea:focus{ outline: 2px solid var(--accent); outline-offset: 2px; }
+    .error{ color: #fecaca; font-size: 12px; margin-top: 6px }
+    .hint{ font-size:12px; opacity:.8; margin-top:6px }
+    .actions{ display:flex; gap:10px; flex-wrap: wrap; align-items:center; justify-content: space-between; }
+    .btn{ border:0; border-radius: 16px; padding: 14px 18px; font-weight: 700; cursor: pointer; font-size: 16px; min-height: 48px; }
+    .primary{ background: var(--accent); color: white; box-shadow: 0 8px 20px rgba(127,29,29,.35); }
+    .primary:hover{ background: var(--accent-dark); }
+    .ghost{ background: transparent; color: var(--text); border: 1px solid var(--field-border); }
+    footer{ margin-top: 22px; text-align:center; font-size:12px; opacity:.75 }
+    .note{ font-size: 12px; opacity: .82; }
+    .ok{ background: var(--ok-bg); border:1px solid var(--ok-bd); color: var(--ok-t); border-radius: 10px; padding: 10px 12px; font-size: 14px; margin: 10px 0; display:none }
+    details summary{ cursor:pointer; list-style:none; }
+    details summary::-webkit-details-marker{ display:none; }
+    details .summary-title{ display:flex; align-items:center; gap:8px; font-weight:600; }
+    .role{ padding:10px 12px; border:1px solid var(--field-border); border-radius:12px; background:#181818; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="accent" aria-hidden="true"></div>
+    <h1>Toronto Horror Film Fest 2026</h1>
+    <p class="subtitle">Volunteer Application Form — please review eligibility, then complete the form.</p>
+
+    <!-- Eligibility (from your brief, concise) -->
+    <section class="card" aria-labelledby="elig">
+      <h2 id="elig">Eligibility & Commitments</h2>
+      <div class="grid">
+        <ul class="note" style="margin:0 0 6px 16px">
+          <li>18+ as of <strong>Oct 28, 2026</strong>.</li>
+          <li>Commit to <strong>4 shifts minimum</strong> (1/day, ~4h each) during <strong>Oct 29 – Nov 8, 2026</strong>.</li>
+          <li>Good English comprehension (other languages are an asset).</li>
+          <li>Most roles require standing/walking for the whole shift.</li>
+          <li>Mandatory orientation & training in <strong>Sept/Oct 2026</strong> (online + in‑person).</li>
+          <li>Inclusive environment — applicants from all backgrounds are welcome.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Roles (concise, collapsible to avoid crowding) -->
+    <section class="card" aria-labelledby="roles">
+      <h2 id="roles">Volunteer Roles (summary)</h2>
+      <div class="grid g3">
+        <details class="role">
+          <summary><span class="summary-title">Spooky Cosplayer</span></summary>
+          <div class="hint">Interact safely (non‑physical), stay in character, comfortable with masks/makeup; performance background is an asset.</div>
+        </details>
+        <details class="role">
+          <summary><span class="summary-title">Cinema Attendant</span></summary>
+          <div class="hint">Greet, scan tickets, usher, flow control, counts; placement varies by venue needs.</div>
+        </details>
+        <details class="role">
+          <summary><span class="summary-title">Accessibility Support</span></summary>
+          <div class="hint">Assist with devices (e.g., D.A.S.), guide to quiet spaces, sensory kits; ASL knowledge preferred; headset/radio; First Aid is an asset.</div>
+        </details>
+      </div>
+      <p class="note" style="margin-top:8px">Full descriptions provided in training materials.</p>
+    </section>
+
+    <!-- Status to show submit/save messages -->
+    <div id="status" class="ok" role="status"></div>
+
+    <!-- Application Form -->
+    <form id="thffForm" class="grid" autocomplete="on">
+      <!-- Personal -->
+      <section class="card">
+        <h2>Personal Information</h2>
+        <div class="grid g2">
+          <div>
+            <label for="fullName">Full Name *</label>
+            <input id="fullName" name="fullName" required autocomplete="name" />
+            <div class="error" data-err="fullName"></div>
+          </div>
+          <div>
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" required autocomplete="email" inputmode="email"/>
+            <div class="error" data-err="email"></div>
+          </div>
+          <div>
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" required autocomplete="tel" inputmode="tel" />
+            <div class="error" data-err="phone"></div>
+          </div>
+          <div>
+            <label for="age">Age (must be 18+ by Oct 28, 2026) *</label>
+            <input id="age" name="age" type="number" required inputmode="numeric" />
+            <div class="error" data-err="age"></div>
+          </div>
+          <div>
+            <label for="languages">Languages Spoken</label>
+            <input id="languages" name="languages" autocomplete="on" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Emergency -->
+      <section class="card">
+        <h2>Emergency Contact</h2>
+        <div class="grid g3">
+          <div>
+            <label for="emergencyName">Name *</label>
+            <input id="emergencyName" name="emergencyName" required autocomplete="name"/>
+            <div class="error" data-err="emergencyName"></div>
+          </div>
+          <div>
+            <label for="emergencyRelation">Relationship</label>
+            <input id="emergencyRelation" name="emergencyRelation" />
+          </div>
+          <div>
+            <label for="emergencyPhone">Phone Number *</label>
+            <input id="emergencyPhone" name="emergencyPhone" required autocomplete="tel" inputmode="tel" />
+            <div class="error" data-err="emergencyPhone"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Health & Safety -->
+      <section class="card">
+        <h2>Health & Safety</h2>
+        <div class="grid g2">
+          <div>
+            <label for="allergies">Allergies or food intolerances</label>
+            <input id="allergies" name="allergies" placeholder="None or specify…"/>
+          </div>
+          <div>
+            <label for="medical">Medical conditions or accessibility needs</label>
+            <input id="medical" name="medical" placeholder="None or specify…"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- Areas of Interest / Positions -->
+      <section class="card">
+        <h2>Areas of Interest / Position Preference</h2>
+        <div class="grid g3">
+          <div>
+            <label for="position1">First Choice *</label>
+            <select id="position1" name="position1" required>
+              <option value="">Select…</option>
+              <option value="cosplayer">Spooky Cosplayer</option>
+              <option value="cinema">Cinema Attendant</option>
+              <option value="accessibility">Accessibility Support</option>
+            </select>
+            <div class="error" data-err="position1"></div>
+          </div>
+          <div>
+            <label for="position2">Second Choice</label>
+            <select id="position2" name="position2">
+              <option value="">Select…</option>
+              <option value="cosplayer">Spooky Cosplayer</option>
+              <option value="cinema">Cinema Attendant</option>
+              <option value="accessibility">Accessibility Support</option>
+            </select>
+          </div>
+          <div>
+            <label for="position3">Third Choice</label>
+            <select id="position3" name="position3">
+              <option value="">Select…</option>
+              <option value="cosplayer">Spooky Cosplayer</option>
+              <option value="cinema">Cinema Attendant</option>
+              <option value="accessibility">Accessibility Support</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Availability -->
+      <section class="card">
+        <h2>Availability</h2>
+        <div class="grid g3">
+          <div>
+            <label for="shifts"># of shifts (min 4) *</label>
+            <input id="shifts" name="shifts" type="number" required inputmode="numeric"/>
+            <div class="error" data-err="shifts"></div>
+          </div>
+          <div>
+            <label for="days">Preferred days</label>
+            <select id="days" name="days">
+              <option value="">Select…</option>
+              <option value="weekdays">Weekdays</option>
+              <option value="weekends">Weekends</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+          <div>
+            <label for="times">Preferred shift times</label>
+            <select id="times" name="times">
+              <option value="">Select…</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label>Available for mandatory orientation & training (Sept/Oct 2026) *</label>
+          <div class="grid" style="grid-template-columns:repeat(2,auto);gap:14px">
+            <label><input type="radio" name="orientation" value="yes"> Yes</label>
+            <label><input type="radio" name="orientation" value="no"> No</label>
+          </div>
+          <div class="error" data-err="orientation"></div>
+        </div>
+      </section>
+
+      <!-- Skills & Experience -->
+      <section class="card">
+        <h2>Special Skills & Experience</h2>
+        <div class="grid g2">
+          <div>
+            <label for="experience">Relevant education or volunteer experience</label>
+            <textarea id="experience" name="experience" rows="4" placeholder="Briefly describe…"></textarea>
+          </div>
+          <div>
+            <label>Special skills (check all that apply)</label>
+            <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+              <label><input type="checkbox" name="skills" value="Performance / Acting"> Performance / Acting</label>
+              <label><input type="checkbox" name="skills" value="ASL"> ASL</label>
+              <label><input type="checkbox" name="skills" value="First Aid / CPR"> First Aid / CPR</label>
+              <label><input type="checkbox" name="skills" value="Customer Service"> Customer Service</label>
+              <label><input type="checkbox" name="skills" value="Event Management"> Event Management</label>
+              <input id="skillOther" name="skillOther" placeholder="Other skill…" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Short Answers -->
+      <section class="card">
+        <h2>Short Answers</h2>
+        <div class="grid g2">
+          <div>
+            <label for="why">Why do you want to volunteer for the Festival?</label>
+            <textarea id="why" name="why" rows="4" placeholder="1–4 sentences is perfect…"></textarea>
+          </div>
+          <div>
+            <label for="source">Where did you hear about this opportunity?</label>
+            <select id="source" name="source">
+              <option value="">Select…</option>
+              <option>VolunteerToronto.ca</option>
+              <option>City of Toronto</option>
+              <option>Public Library</option>
+              <option>Campus</option>
+              <option>Social Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume / CV -->
+      <section class="card">
+        <h2>Résumé / CV</h2>
+        <div class="grid g2">
+          <div>
+            <label for="resume">Upload résumé (PDF/DOC/DOCX/TXT) — max 10MB</label>
+            <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <div class="hint">Demo only — file is not uploaded to a server.</div>
+            <div id="resumeMeta" class="hint"></div>
+            <div id="resumeError" class="error"></div>
+          </div>
+          <div>
+            <label for="cover">Cover letter (optional)</label>
+            <textarea id="cover" name="cover" rows="5" placeholder="Paste a short cover letter if you want…"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Acknowledgment -->
+      <section class="card">
+        <h2>Acknowledgment</h2>
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:14px;opacity:.95">
+          <input id="acknowledgment" type="checkbox">
+          <span>I confirm my availability for at least 4 shifts (one per day) between <strong>Oct 29 – Nov 8, 2026</strong>, understand that orientation & training in Sept/Oct 2026 are mandatory, and that roles may require standing/walking for the duration of a shift.</span>
+        </label>
+        <div class="error" data-err="acknowledgment"></div>
+      </section>
+
+      <div class="actions" role="group" aria-label="Form actions">
+        <div>
+          <button class="btn primary" type="submit">Submit (Demo)</button>
+          <button class="btn ghost" type="button" id="exportBtn">Export JSON</button>
+          <button class="btn ghost" type="button" id="resetBtn">Reset</button>
+        </div>
+        <p class="note">Front‑end demo: submissions are saved locally (on this device).</p>
+      </div>
+    </form>
+
+    <footer>© 2026 Toronto Horror Film Fest — Academic demo.</footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('thffForm');
+    const status = document.getElementById('status');
+    const resumeInput = document.getElementById('resume');
+    const resumeMeta = document.getElementById('resumeMeta');
+    const resumeError = document.getElementById('resumeError');
+    const MAX_BYTES = 10 * 1024 * 1024; // 10MB
+
+    const err = (name, msg='') => {
+      const el = document.querySelector(`[data-err="${name}"]`);
+      if (el) el.textContent = msg;
+    };
+
+    function validateAll(){
+      let ok = true;
+      // clear all
+      document.querySelectorAll('.error').forEach(e=> e.textContent='');
+      const need = ['fullName','email','phone','age','emergencyName','emergencyPhone','shifts','position1'];
+      need.forEach(n => {
+        const el = form.elements[n];
+        const v = el?.value?.trim();
+        if (!v) { err(n,'Required'); ok = false; }
+      });
+      if (form.age.value && Number(form.age.value) < 18) { err('age','Must be 18+ by Oct 28, 2026'); ok = false; }
+      if (form.shifts.value && Number(form.shifts.value) < 4) { err('shifts','Minimum 4 shifts'); ok = false; }
+
+      const orient = form.querySelector('input[name="orientation"]:checked');
+      if(!orient){ err('orientation','Required'); ok = false; }
+
+      if(!document.getElementById('acknowledgment').checked){ err('acknowledgment','Required'); ok=false; }
+
+      // resume optional but if present: validate
+      resumeError.textContent = ''; resumeMeta.textContent='';
+      const f = resumeInput.files && resumeInput.files[0];
+      if (f) {
+        if (f.size > MAX_BYTES) { resumeError.textContent = 'File too large (max 10MB).'; ok = false; }
+        const extOk = /\.(pdf|doc|docx|txt)$/i.test(f.name);
+        const allowed = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','text/plain'];
+        if (!extOk && !allowed.includes(f.type)) { resumeError.textContent = 'Unsupported file type.'; ok=false; }
+        if (ok) resumeMeta.textContent = `Selected: ${f.name} (${f.size} bytes)`;
+      }
+      return ok;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validateAll()) return;
+      const data = {};
+      const fd = new FormData(form);
+      for (const [k,v] of fd.entries()) {
+        if (k === 'skills') { if (!Array.isArray(data.skills)) data.skills = []; data.skills.push(v); }
+        else if (k !== 'resume') { data[k] = v; }
+      }
+      data.acknowledgment = document.getElementById('acknowledgment').checked;
+      const f = resumeInput.files && resumeInput.files[0];
+      if (f) { data.resume = { name:f.name, size:f.size, type:f.type || 'unknown' }; }
+
+      localStorage.setItem('thff_aligned_submit', JSON.stringify(data, null, 2));
+      status.textContent = '✅ Application captured locally. Use “Export JSON” to download your entry.';
+      status.style.display = 'block';
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const raw = localStorage.getItem('thff_aligned_submit') || '{}';
+      const blob = new Blob([raw], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'THFF_2026_Volunteer_Application.json';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      form.reset();
+      document.querySelectorAll('.error').forEach(e => e.textContent = '');
+      status.style.display = 'none';
+      resumeMeta.textContent = '';
+      resumeError.textContent = '';
+    });
+  </script>
+</body>
+</html>
